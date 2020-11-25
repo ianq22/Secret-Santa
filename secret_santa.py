@@ -46,6 +46,9 @@ for crony in cronies:
                 delMatches.append(matchText)
             elif (crony['Name'] != 'Ian'):
                 ianMatches.append(matchText)
+            
+            if(crony['Name'] == 'Derek'):
+                print('Fuck Derek')
 
             allMatches.append(matchText)
 
