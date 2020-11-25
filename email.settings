@@ -1,0 +1,9 @@
+[smtp]
+server = "localhost"
+port = 825
+isdev = "true"
+username = "your@username.com"
+password = "test1234"
+sender = "test@sender.com"
+delMail = "test@test.com"
+ianMail = "test@test.com"
