@@ -56,10 +56,10 @@ for crony in cronies:
             msg['To'] = crony['Email']
 
             #  For some reason I have to literally hard code the server here or it doesn't work. This is why Python is not webscale or production ready like Rust.
-            #with smtplib.SMTP('localhost', int(emailConfig.get('smtp', 'port'))) as smtp:
-                #if (emailConfig.get('smtp', 'isdev') == 'False'):
-                    #smtp.login(emailConfig.get('smtp', 'username'), emailConfig.get('smtp', 'password'))
-                #smtp.send_message(msg)
+            with smtplib.SMTP('localhost', int(emailConfig.get('smtp', 'port'))) as smtp:
+                if (emailConfig.get('smtp', 'isdev') == 'False'):
+                    smtp.login(emailConfig.get('smtp', 'username'), emailConfig.get('smtp', 'password'))
+                smtp.send_message(msg)
             
             #  Remove the match from clonies and break the loop
             clonies.remove(match)
